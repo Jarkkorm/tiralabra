@@ -1,4 +1,5 @@
 # Pakkaajat
+Projekti toteutentaan Javalla ja dokumentaatiot tehdään suomeksi.
 
 ## Dokumentaatio
-[Maarittelydokumentti](https://github.com/Jarkkorm/ot-harjoitustyo/blob/master/tiralabra/Dokumentaatio/maarittelydokumentti.md)
+[Maarittelydokumentti](https://github.com/Jarkkorm/tiralabra/blob/main/Dokumentaatio/maarittelydokumentti.md)

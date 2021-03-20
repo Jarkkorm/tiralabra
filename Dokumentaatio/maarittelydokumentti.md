@@ -1,6 +1,6 @@
 # Määrittely
 
-Toteutetaan Huffman ja Lempel Ziv pakkausalgoritmit ja niiden vaatimat tietorakenteet. 
+Toteutetaan Javallla Huffman ja Lempel Ziv pakkausalgoritmit ja niiden vaatimat tietorakenteet. 
 Tavoitteena luoda ohjelma jolla tiedoston voi pakata ja palauttaa entisekseen sekä verrata toteutettujen algoritmien suorituskykyä toisiinsa.
 
 ## Lähteet
