@@ -1,5 +1,5 @@
 # Viikkoraportti: viikko 2
 
-Jatkettiin projektia Netbensissa. Saatiin yksinkertainen käyttöliittymä aloitettua. Alettiin rakentamaan ohjelman runkoa ja Huffmanin koodausta. 
+Jouduttiin aloittamaan Netbeans projekti uudestaan. Saatiin yksinkertainen käyttöliittymä aloitettua. Alettiin rakentamaan ohjelman runkoa ja Huffmanin koodausta. 
 
 Käytetty aika 7h
