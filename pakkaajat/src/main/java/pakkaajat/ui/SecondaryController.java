@@ -1,4 +1,4 @@
-package testi.pakkaajat;
+package pakkaajat.ui;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
