@@ -28,7 +28,7 @@
                   <Button fx:id="selectorButton" mnemonicParsing="false" onAction="#fileSelector" text="Valitse tiedosto" />
                   <Label fx:id="fileName" text="Tiedoston nimi" GridPane.columnIndex="1" />
                   <Label fx:id="fileSize" text="Koko" GridPane.columnIndex="2" />
-                  <Button fx:id="compress" mnemonicParsing="false" text="Pakkaa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="compressButton" mnemonicParsing="false" onAction="#compress" text="Pakkaa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
                <padding>
                   <Insets left="1.0" right="1.0" />

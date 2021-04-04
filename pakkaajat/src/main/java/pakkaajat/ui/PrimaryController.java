@@ -8,10 +8,11 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
+import pakkaajat.domain.Huffman;
 
 public class PrimaryController {
     
-    File file;
+    private File file;
             
     @FXML
     private Label fileName;
@@ -21,17 +22,17 @@ public class PrimaryController {
     
     @FXML
     private void compress(ActionEvent event) throws Exception {
-        compressHuffman(file);
+        Huffman.pakkaaHuffman(file);
     }
     
     @FXML
-    private void fileSelector(ActionEvent event) throws Exception{
+    private void fileSelector(ActionEvent event) throws Exception {
         Window window = ((Node) (event.getSource())).getScene().getWindow();
         FileChooser fileChooser = new FileChooser();
         file = fileChooser.showOpenDialog(window);
         event.consume();
         fileName.setText(file.getName());
-        fileSize.setText(Long. toString(file.length()));
+        fileSize.setText(Long.toString(file.length()));
     }
     
     @FXML
