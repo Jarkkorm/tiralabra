@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
@@ -13,7 +15,7 @@
    <children>
       <Pane prefHeight="251.0" prefWidth="523.0">
          <children>
-            <GridPane layoutY="-1.0" prefHeight="95.0" prefWidth="498.0">
+            <GridPane layoutY="-1.0" prefHeight="234.0" prefWidth="498.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="143.5" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="185.0" />
@@ -23,12 +25,48 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Button fx:id="selectorButton" mnemonicParsing="false" onAction="#fileSelector" text="Valitse tiedosto" />
                   <Label fx:id="fileName" text="Tiedoston nimi" GridPane.columnIndex="1" />
                   <Label fx:id="fileSize" text="Koko" GridPane.columnIndex="2" />
                   <Button fx:id="compressButton" mnemonicParsing="false" onAction="#compress" text="Pakkaa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Huffman" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Lempel-Ziv" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label text="Pakkaus" GridPane.rowIndex="3" />
+                  <Label text="Purkaminen" GridPane.rowIndex="4" />
+                  <Label fx:id="HuffmanPurkamisAika" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="LempelPurkamisAika" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="HuffmanPakkausAika" layoutX="25.0" layoutY="15.0" text="Label" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="HuffmanPakattuKoko" layoutX="25.0" layoutY="15.0" text="Label" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="LempelPakkausAika" layoutX="24.0" layoutY="15.0" text="Label" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="LempelPakattuKoko" layoutX="14.0" layoutY="15.0" text="Label" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
                </children>
                <padding>
                   <Insets left="1.0" right="1.0" />
