@@ -20,31 +20,15 @@ public class FileIO {
     public static char[] readFile(File file) throws FileNotFoundException, IOException {
         BufferedReader br = new BufferedReader(new FileReader(file));
         String s = "";
-        int i = 0;
+        int i = br.read();;
         char[] contents = {};
         while (i != -1) {
-            i = br.read();
             s += (char) i;
+            i = br.read();
         }
         contents = s.toCharArray();
         
         return contents; 
-    }
-    
-    public static char[] readHuffman(File file) throws FileNotFoundException, IOException {
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String string;
-        char[] contents = {};
-        while ((string = br.readLine()) != null) {
-            contents = string.toCharArray();
-        }
-        
-        return contents; 
-    }
-    
-    public static HuffmanSolmu readHuffmanTree() {
-        HuffmanSolmu solmu = new HuffmanSolmu(' ', 0, null, null);
-        return solmu;
     }
 
     public static void writeFile(String name, String pakattuData, HuffmanSolmu tree) throws IOException {
@@ -53,56 +37,6 @@ public class FileIO {
         tallennaHuffmanPuu(tree);
         tallennaHuffmanData(pakattuData);
         out.close();
-        
-    }
-
-    private static void tallennaHuffmanPuu(HuffmanSolmu tree) {
-        if (tree == null) {
-            return;
-        }
-        
-        if (!tree.onkoLehti()) {
-            writeBit(0);
-            tallennaHuffmanPuu(tree.getVasenSolmu());
-            tallennaHuffmanPuu(tree.getOikeaSolmu());
-        } else {
-            char merkki = tree.getMerkki();
-            writeBit(1);
-            for (int j = 0; j < 8; j++) {
-                int bit = (merkki >>> (8 - j - 1));
-                writeBit(bit);
-            }
-        }
-    }
-    /*
-    private static void lueHuffmanPuu() {
-        bit readBit();
-    
-        if (!tree.onkoLehti()) {
-            writeBit(0);
-            tallennaHuffmanPuu(tree.getVasenSolmu());
-            tallennaHuffmanPuu(tree.getOikeaSolmu());
-        } else {
-            char merkki = tree.getMerkki();
-            writeBit(1);
-            for (int j = 0; j < 8; j++) {
-                int bit = (merkki >>> (8 - j - 1));
-                writeBit(bit);
-            }
-        }
-    }
-    */
-    
-    public static void tallennaHuffmanData(String pakattuData) {
-        for (int i = 1; i < pakattuData.length(); i++) {
-            System.out.println(pakattuData);
-            //for (int j = 0; j < 8; j++) {
-                int bit = (Character.getNumericValue(pakattuData.charAt(i))); //>>> (8 - j - 1)) & 1) == 1;
-                writeBit(bit);
-                System.out.println(bit);
-            //}
-        }        
-
     }
 
     private static void writeBit(int bit) {
@@ -118,7 +52,6 @@ public class FileIO {
         if (n == 0) return;
         if (n > 0) buffer <<= (8 - n);
         try {
-            System.out.println(buffer);
             out.write(buffer);
         }
         catch (IOException e) {

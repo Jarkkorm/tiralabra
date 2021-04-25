@@ -28,9 +28,9 @@ public class Huffman {
         Map<Character, String> map = new HashMap<>();
         luoMerkisto(tree, map, "");
         
-        final String pakattuData = luoPakattuData(content, map);
+        final String pakattuData = HuffmanTiedosto.luoPakattuData(content, map, tree);
         long loppu = System.nanoTime();
-        FileIO.writeFile(file.getName(), pakattuData, tree);
+        FileIO.writeFile(file.getName(), pakattuData);
         //return (loppu - alku);
     }
     
@@ -38,7 +38,6 @@ public class Huffman {
     private static int[] frekvenssi(char[] data) {
         int[] f = new int [256];
         for (int i = 0; i < data.length; i++) {
-            System.out.println((int) data[i]);
             f[data[i]]++;
         }
         return f;
@@ -71,17 +70,6 @@ public class Huffman {
         } else {
             map.put(puu.getMerkki(), s);
         }
-    }
-
-    private static String luoPakattuData(char[] content, Map<Character, String> map) {
-        String result = "";
-        // byte[] result = new byte[content.length];
-        
-        for (int i = 1; i < content.length; i++) {
-            result += map.get(content[i]);
-        }        
-
-        return result;
     }
 
 }
